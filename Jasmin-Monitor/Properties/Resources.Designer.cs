@@ -61,15 +61,6 @@ namespace Jasmin_Monitor.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\Users\USER\Desktop\captcha2.jpg.
-        /// </summary>
-        internal static string girlimage {
-            get {
-                return ResourceManager.GetString("girlimage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap settings {

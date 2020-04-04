@@ -4,6 +4,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Jasmin_Monitor
 {
@@ -18,11 +19,19 @@ namespace Jasmin_Monitor
         public Login(MainWindow main)
         {
             this.main = main;
+            this.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
             txtbox_password.MouseDown += Txtbox_password_MouseDoubleClick;
             txtbox_Username.MouseDown += Txtbox_Username_MouseDoubleClick;
             Done.Content = "Done";
             Done.Click += Done_Click;
+            try
+            {
+                BitmapImage image = new BitmapImage(new Uri("baseimage.jpg", UriKind.Relative));
+                UserImage.Source = image;
+                
+            }
+            catch (Exception ex) { }
         }
         //we need main to pass down the CNP and password
         private MainWindow main;
@@ -51,11 +60,19 @@ namespace Jasmin_Monitor
                     {
                         CNP = ResponseStream.ReadToEnd();
                         ResponseStream.Close();
+                    
+                        
                     }
 
-                    //
-                    main.setCNP(CNP);
-                    this.Hide();
+                    //  
+                    if (CNP.Contains("Login"))
+                    {
+                        CNP = CNP.Split('"')[5];
+                        main.setCNP(CNP);
+                        this.Hide();
+                    }
+                    else
+                        MessageBox.Show("Incorrect Username or password");
                 }
                 catch (Exception ex)
                 {

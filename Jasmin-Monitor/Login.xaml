@@ -11,7 +11,13 @@
     <Window.Background>
         <SolidColorBrush Opacity="0.5" Color="White"/>
     </Window.Background>
-    <Grid RenderTransformOrigin="0.5,0.5">
+    <Grid RenderTransformOrigin="0.5,0.5" Opacity="0.5">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF7A7777" Offset="0.53"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RenderTransform>
             <TransformGroup>
                 <ScaleTransform/>
@@ -22,9 +28,9 @@
         </Grid.RenderTransform>
         <TextBox x:Name="txtbox_Username" HorizontalAlignment="Left" Height="35" Margin="60,100,0,0" TextWrapping="Wrap" Text="Uername..." VerticalAlignment="Top" Width="372" FontSize="20"/>
         <TextBox x:Name="txtbox_password" HorizontalAlignment="Left" Height="35" Margin="60,160,0,0" TextWrapping="Wrap" Text="Password..." VerticalAlignment="Top" Width="372" FontSize="20"/>
-        <Image HorizontalAlignment="Left" Height="50" Margin="216,10,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.504,0.463"/>
         <Label Content="User" HorizontalAlignment="Left" Margin="216,65,0,0" VerticalAlignment="Top" Width="64" FontSize="15"/>
         <Button x:Name="Done" Content="Button" HorizontalAlignment="Left" Margin="190,226,0,0" VerticalAlignment="Top" Width="108" Height="52" FontSize="20" FontFamily="Segoe UI Black"/>
+        <Image x:Name="UserImage" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="90" Margin="190,0,0,0" />
 
     </Grid>
 </Window>

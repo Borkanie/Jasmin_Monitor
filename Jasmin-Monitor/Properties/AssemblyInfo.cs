@@ -6,9 +6,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Jasmin-Monitor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An app that will help you track your Jasmin stats")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("soft-lab")]
 [assembly: AssemblyProduct("Jasmin-Monitor")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

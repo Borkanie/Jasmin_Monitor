@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\USER\source\repos\jasmin_monitor\Jasmin-Monitor\obj\Debug\
+C:\Users\USER\source\repos\jasmin_monitor\Jasmin-Monitor\obj\Release\
 Jasmin_Monitor
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\USER\source\repos\jasmin_monitor\Jasmin-Monitor\App.xaml
 2-419086188
 
-9-1105752007
+8951875902
 161099911795
 MainWindow.xaml;Login.xaml;
 

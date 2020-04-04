@@ -180,9 +180,9 @@ namespace Jasmin_Monitor
             labellist[0].Content = labellist.Count;
             if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\CNP.txt"))
             {
-                setCNP(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\CNP.txt"));
-                Slave = new Thread(() => Get_Data_And_Upload_GUI());
-                Slave.Start();
+                string newcnp = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\CNP.txt").Split('\r')[0];
+                setCNP(newcnp);
+              
             }
             else
                 loginForm.Show();
@@ -392,20 +392,20 @@ namespace Jasmin_Monitor
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.OrangeRed);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed);
 
                     }
                     else
-                        traffic_bun.Background = Colors.OrangeRed;//orange
+                        traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed;//orange
                 }
 
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.Red);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Red);
 
                 }
                 else
-                    traffic_bun.Background = Colors.Red;//red
+                    traffic_bun.Background = System.Windows.Media.Brushes.Red;//red
                 return;
             }
 
@@ -419,11 +419,11 @@ namespace Jasmin_Monitor
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.Red);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Red);
 
                     }
                     else
-                        traffic_bun.Background = Colors.Red;//red
+                        traffic_bun.Background = System.Windows.Media.Brushes.Red;//red
                     return;
                 }
                 if (current_hours == System.Drawing.Color.Green)
@@ -431,20 +431,20 @@ namespace Jasmin_Monitor
 
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.Yellow);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Yellow);
 
                     }
                     else
-                        traffic_bun.Background = Colors.Yellow;//yellow
+                        traffic_bun.Background = System.Windows.Media.Brushes.Yellow;//yellow
                     return;
                 }
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.OrangeRed);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed);
 
                 }
                 else
-                    traffic_bun.Background = Colors.OrangeRed;//orange
+                    traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed;//orange
             }
             #endregion
 
@@ -456,31 +456,31 @@ namespace Jasmin_Monitor
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.Red);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Red);
 
                     }
                     else
-                        traffic_bun.Background = Colors.Red; 
+                        traffic_bun.Background = System.Windows.Media.Brushes.Red; 
                     return;
                 }
                 if (current_hours == System.Drawing.Color.Orange)
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.OrangeRed);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed);
 
                     }
                     else
-                        traffic_bun.Background = Colors.OrangeRed;
+                        traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed;
                     return;
                 }
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.Yellow);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Yellow);
 
                 }
                 else
-                    traffic_bun.Background = Colors.Yellow;
+                    traffic_bun.Background = System.Windows.Media.Brushes.Yellow;
             }
             #endregion
 
@@ -492,43 +492,43 @@ namespace Jasmin_Monitor
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.Red);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Red);
 
                     }
                     else
-                        traffic_bun.Background = Colors.Red;
+                        traffic_bun.Background = System.Windows.Media.Brushes.Red;
                     return;
                 }
                 if (current_hours == System.Drawing.Color.Orange)
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.OrangeRed);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed);
 
                     }
                     else
-                        traffic_bun.Background = Colors.OrangeRed;
+                        traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed;
                     return;
                 }
                 if (current_hours == System.Drawing.Color.Yellow)
                 {
                     if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                     {
-                        Dispatcher.Invoke(() => traffic_bun.Background = Colors.Yellow);
+                        Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Yellow);
 
                     }
                     else
-                        traffic_bun.Background = Colors.Yellow;
+                        traffic_bun.Background = System.Windows.Media.Brushes.Yellow;
                     return;
                 }
 
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.LightGreen);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.LightGreen);
 
                 }
                 else
-                    traffic_bun.Background = Colors.LightGreen;
+                    traffic_bun.Background = System.Windows.Media.Brushes.LightGreen;
 
             }
             #endregion
@@ -539,44 +539,44 @@ namespace Jasmin_Monitor
             {
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.Red);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Red);
 
                 }
                 else
-                    traffic_bun.Background = Colors.Red;
+                    traffic_bun.Background = System.Windows.Media.Brushes.Red;
                 return;
             }
             if (current_hours == System.Drawing.Color.Orange)
             {
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.OrangeRed);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed);
 
                 }
                 else
-                    traffic_bun.Background = Colors.OrangeRed;
+                    traffic_bun.Background = System.Windows.Media.Brushes.OrangeRed;
                 return;
             }
             if (current_hours == System.Drawing.Color.Yellow)
             {
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.Yellow);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Yellow);
 
                 }
                 else
-                    traffic_bun.Background = Colors.Yellow;
+                    traffic_bun.Background = System.Windows.Media.Brushes.Yellow;
                 return;
             }
             if (current_hours == System.Drawing.Color.LightGreen)
             {
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.LightGreen);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.LightGreen);
 
                 }
                 else
-                    traffic_bun.Background = Colors.LightGreen;
+                    traffic_bun.Background = System.Windows.Media.Brushes.LightGreen;
 
                 return;
             }
@@ -584,11 +584,11 @@ namespace Jasmin_Monitor
             {
                 if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
                 {
-                    Dispatcher.Invoke(() => traffic_bun.Background = Colors.Green);
+                    Dispatcher.Invoke(() => traffic_bun.Background = System.Windows.Media.Brushes.Green);
 
                 }
                 else
-                    traffic_bun.Background = Colors.Green;
+                    traffic_bun.Background = System.Windows.Media.Brushes.Green;
                 return;
             }
             #endregion
@@ -645,9 +645,10 @@ namespace Jasmin_Monitor
                 string[] dummy = { CNP };
                 File.WriteAllLines(System.AppDomain.CurrentDomain.BaseDirectory + "\\CNP.txt", dummy);
             }
-            this.key = key;
+            
             this.CNP = CNP;
             Slave = new Thread(this.Get_Data_And_Upload_GUI);
+            Slave.Start();
         }
         private void ChangeProfilePicture()
         {
@@ -669,7 +670,7 @@ namespace Jasmin_Monitor
                 ellipse.VerticalAlignment = VerticalAlignment.Center;
                 ellipse.HorizontalAlignment = HorizontalAlignment.Center;
                 baseimage = ellipse;
-
+                image = null;
             }
             catch (Exception ex)
             {
@@ -697,6 +698,7 @@ namespace Jasmin_Monitor
         //currently empty will navigate to the horex webpage
         private void Home_Button_Click(object sender, RoutedEventArgs e)
         {
+            Process.Start("chrome.exe", "https://horex.beststudios.ro/");
             //  throw new NotImplementedException();
         }
         //starts a jasminCam app i doesnt fill in the username and password yet
