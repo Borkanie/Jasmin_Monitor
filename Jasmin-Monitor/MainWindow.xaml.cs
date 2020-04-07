@@ -15,6 +15,7 @@ namespace Jasmin_Monitor
     /// Interaction logic for MainWindow.xaml
     /// here we create and change the graphical elements like the circles and the values
     /// </summary>
+    /// //jcam.exe -pass "super secret" -user "user@user.com" cica pt jcam cu username dr nu cred
     public partial class MainWindow : AppBarWindow
     {
         //contructor
@@ -34,13 +35,16 @@ namespace Jasmin_Monitor
         private ItemsControl listBox;//canvas to change values
         private Thread Slave;//the thread that constantly changes them,5 min freeze time
         private string CNP = "2850203171690";//"2850203171690" it will be empty
-        private string key = "4ccd407cdae29b2b2f56de1be88cae08";//"4ccd407cdae29b2b2f56de1be88cae08" ??
-        private Ellipse baseimage;//remember the image currently displayed
+        private string key = "4ccd407cdae29b2b2f56de1be88cae08";//"4ccd407cdae29b2b2f56de1be88cae08" ?? 
         private bool checking_for_values = false;//this bool tells us if the program is running
         private System.Drawing.Color current_hours;//color to diplay traffic bun
         private System.Drawing.Color old_hours;//old color to display traffic bun we need them both
         private Button traffic_bun; // we need the button to change its color
         #endregion
+
+
+
+
         //here we load all interface objects(canvas,ellipse,label etc)
         #region loadin interface
         //adding the canvas with the values and the circles
@@ -60,9 +64,9 @@ namespace Jasmin_Monitor
         //adding the image of the model
         private void addimage(Image image)
         {
-            Ellipse ellipse = uicreatorclass.createProfilePicture(52, image);
+            Ellipse ellipse = uicreatorclass.createProfilePicture(50, image);
+            
             listBox.Items.Add(ellipse);
-            baseimage = ellipse;
             ellipse.VerticalAlignment = VerticalAlignment.Center;
             ellipse.HorizontalAlignment = HorizontalAlignment.Center;
 
@@ -127,14 +131,14 @@ namespace Jasmin_Monitor
             addrectangle(this.Width, 5, false);
             //creating the componing elements
 
-            Api_calstring.GetProfilePIcture(key, CNP);
+            //Api_calstring.GetProfilePIcture(key, CNP);
             Image image = new Image();
             //Uri imageUri = new Uri("C:\\Users\\USER\\Desktop\\captcha2.jpg", UriKind.Absolute);
             Uri imageUri = new Uri("baseimage.jpg", UriKind.Relative);
             BitmapImage imageBitmap = new BitmapImage(imageUri);
             image.Source = imageBitmap;
             addimage(image);//adds the iamge
-
+           
             addtitle("Hello" + '\n' + "Alisa");//adds the hello+ na e text
 
             addrectangle(this.Width, 5, false);
@@ -189,6 +193,9 @@ namespace Jasmin_Monitor
            
         }
         #endregion
+
+
+
         //here we get the values trough requests and set them on the UI
         #region Get_data_adn_upload_GUI
         //calculates income in dolars per Hour
@@ -266,12 +273,13 @@ namespace Jasmin_Monitor
             catch (Exception ex)
             {
                 string s = ex.Message;
-                MessageBox.Show("Couldn't get Cartonase" + s);
+                MessageBox.Show("Couldn't get Cartonase" + s+" "+Cartonase_now);
 
             }
+            string Cartonase_old=" ";
             try
             {
-                string Cartonase_old = Api_calstring.GetCartonase(key, CNP, Api_calstring.GetPerioadaAnterioara());
+                Cartonase_old = Api_calstring.GetCartonase(key, CNP, Api_calstring.GetPerioadaAnterioara());
                 ChangeTextInLabel(1, Cartonase_old.Split('"')[7]);//set ore
                 ChangeIndicatorColor(1, Api_calstring.GetColorOre(Cartonase_old.Split('"')[7]));
                 ChangeTextInLabel(3, Cartonase_old.Split('"')[11]);//set ioncasari
@@ -283,7 +291,7 @@ namespace Jasmin_Monitor
             catch (Exception ex)
             {
                 string s = ex.Message;
-                MessageBox.Show("Couldn't get Cartonase_old" + s);
+                MessageBox.Show("Couldn't get Cartonase_old" + s +" "+Cartonase_old);
             }
         }
         //implements bounce rate for both periods
@@ -599,18 +607,12 @@ namespace Jasmin_Monitor
         {
             if (CNP != "")
             {
-                if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
-                {
-                    Dispatcher.Invoke(() => ChangeProfilePicture());
-
-                }
-                else
-                    ChangeProfilePicture();
+               
                 ModelInfo();
                 Cartonase();
                 BounceRate();
                 Traffic_Bun_Color();
-                Thread.Sleep(1000 * 300);
+                Thread.Sleep(1000 * 30);
                 this.Get_Data_And_Upload_GUI();
             }
             else
@@ -645,8 +647,14 @@ namespace Jasmin_Monitor
                 string[] dummy = { CNP };
                 File.WriteAllLines(System.AppDomain.CurrentDomain.BaseDirectory + "\\CNP.txt", dummy);
             }
-            
             this.CNP = CNP;
+            if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
+            {
+                Dispatcher.Invoke(() => ChangeProfilePicture());
+
+            }
+            else
+                ChangeProfilePicture();
             Slave = new Thread(this.Get_Data_And_Upload_GUI);
             Slave.Start();
         }
@@ -655,22 +663,23 @@ namespace Jasmin_Monitor
             try
             {
 
-                listBox.Items.Remove(baseimage);
-
-                Api_calstring.GetProfilePIcture(key, CNP);
-                Image image = new Image();
+                
+                
                 //Uri imageUri = new Uri("C:\\Users\\USER\\Desktop\\captcha2.jpg", UriKind.Absolute);
-                Uri imageUri = new Uri("profilepicture.jpg", UriKind.Relative);
-                BitmapImage imageBitmap = new BitmapImage(imageUri);
-                image.Source = imageBitmap;
+               // ImageBrush myBrush = new ImageBrush();
+               // myBrush.ImageSource = new BitmapImage(new Uri("baseimage.jpg", UriKind.Relative));
+               // baseimage.Fill = myBrush;
+               
+                listBox.Items.RemoveAt(1);
+                
+                
+                //Uri imageUri = new Uri("C:\\Users\\USER\\Desktop\\captcha2.jpg", UriKind.Absolute);
+                System.Windows.Controls.Image image = Api_calstring.GetProfilePIcture(key, CNP);            
+                Ellipse ellipse = uicreatorclass.createProfilePicture(50, image);            
+                listBox.Items.Insert(1,ellipse);
 
-                Ellipse ellipse = uicreatorclass.createProfilePicture(52, image);
-                ellipse.BringIntoView();
-                listBox.Items.Insert(1, ellipse);
-                ellipse.VerticalAlignment = VerticalAlignment.Center;
-                ellipse.HorizontalAlignment = HorizontalAlignment.Center;
-                baseimage = ellipse;
-                image = null;
+
+
             }
             catch (Exception ex)
             {

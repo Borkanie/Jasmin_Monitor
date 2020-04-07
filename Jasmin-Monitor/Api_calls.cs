@@ -2,6 +2,8 @@
 using System.IO;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Jasmin_Monitor
 {
@@ -28,7 +30,24 @@ namespace Jasmin_Monitor
         {
             perioada = perioad;
         }
-        static public void GetProfilePIcture(string key, string CNP)//gets the profile picture and saves it under "profilepicture.jpg"
+       static  private BitmapImage LoadImage(string myImageFile)
+        {
+            BitmapImage myRetVal = null;
+            if (myImageFile != null)
+            {
+                BitmapImage image = new BitmapImage();
+                using (FileStream stream = File.OpenRead(myImageFile))
+                {
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = stream;
+                    image.EndInit();
+                }
+                myRetVal = image;
+            }
+            return myRetVal;
+        }
+        static public System.Windows.Controls.Image GetProfilePIcture(string key, string CNP)//gets the profile picture and saves it under "profilepicture.jpg"
         {
 
             string Uri = "https://horex.beststudios.ro/v1/index.php?key=" + key + "&action=profileImg&modelCNP=" + CNP;
@@ -50,14 +69,22 @@ namespace Jasmin_Monitor
             {
                 using (BinaryReader reader = new BinaryReader(lxResponse.GetResponseStream()))
                 {
+                    if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "profilepicture.jpg"))
+                        File.Delete(AppDomain.CurrentDomain.BaseDirectory + "profilepicture.jpg");
+                        
                     Byte[] lnByte = reader.ReadBytes(1 * 1024 * 1024 * 10);
                     using (FileStream lxFS = new FileStream("profilepicture.jpg", FileMode.Create))
                     {
                         lxFS.Write(lnByte, 0, lnByte.Length);
+                      
                     }
-                }
+                
+.
+              
             }
-            // return new ImageBrush(new BitmapImage(new Uri("profilepicture.jpeg", UriKind.Relative)));
+            System.Windows.Controls.Image image = new System.Windows.Controls.Image();
+            image.Source = LoadImage(AppDomain.CurrentDomain.BaseDirectory+"profilepicture.jpg");
+            return image;
 
         }
 
