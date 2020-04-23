@@ -8,7 +8,13 @@
         mc:Ignorable="d"
          Height="{Binding System.Windows.SystemParameters.WorkArea.Height}"
         Title="MainWindow"  MaxWidth="120" WindowStyle="None" Loaded="AppBarWindow_Loaded" Closing="AppBarWindow_Closing" Topmost="True" ResizeMode="NoResize">
-    <Grid x:Name="main_Grid" Background="#FFACA6A6"  >
+    <apb:AppBarWindow.Background>
+        <LinearGradientBrush EndPoint="1,0.5" MappingMode="RelativeToBoundingBox" StartPoint="0,0.5">
+            <GradientStop Color="#FF530000" Offset="0.874"/>
+            <GradientStop Color="#FFA60707"/>
+        </LinearGradientBrush>
+    </apb:AppBarWindow.Background>
+    <Grid x:Name="main_Grid"   >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120" MaxWidth="120"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -50,7 +56,7 @@
         <Ellipse x:Name="ProfilePicture" Grid.Column="0" Grid.Row="0" Height="50" Width="45" Fill="#FF1448B4" ></Ellipse>
         <TextBlock x:Name="txt_hello" Text="Hello" Grid.Column="0" Grid.Row="1" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <TextBlock x:Name="txt_girl_name" Text="Alissa" Grid.Column="0" Grid.Row="2" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        
+
         <Border Grid.Row="3" Grid.Column="0" Background="Black" BorderBrush="Gray" Width="100" Height="3"  CornerRadius="50,50,50,50" VerticalAlignment="Top" HorizontalAlignment="Center"></Border>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="ore" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="DemiBold" ></TextBlock>
 
@@ -122,8 +128,15 @@
         <Ellipse x:Name="ellipsa_cartonase" Grid.Row="21" Grid.Column="0" Fill="Red" Margin="13,3,91,3" MaxHeight="16" ></Ellipse>
         <TextBlock x:Name="txt_cartonase" Grid.Row="21" Grid.Column="0" Text="0$" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 
-        <Ellipse x:Name="indicator_traffic_bun" Grid.Row="22" Fill="Green" Grid.Column="0" Margin="30,0,30,0" MaxHeight="60" MaxWidth="60"/>
-       
+        <Ellipse x:Name="indicator_traffic_bun" Grid.Row="22" Grid.Column="0" Margin="30,0,30,0" MaxHeight="60" MaxWidth="60">
+            <Ellipse.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D91FF" Offset="0"/>
+                    <GradientStop Color="#FF052B7C" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+
         <Button x:Name="btn_JasminCam" Grid.Column="0" Grid.Row="23" Width="40" Height="40" Background="Red" Click="Btn_JasminCam_Click"></Button>
 
         <Button x:Name="btn_Home" Grid.Column="0" Grid.Row="24" Width="50" Height="50" Background="White" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Btn_Home_Click">
@@ -135,11 +148,11 @@
         </Button>
 
         <Button x:Name="btn_Settings" Grid.Column="0" Grid.Row="25"  Height="30" Width="30" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Btn_Settings_Click">
-        <Button.Resources>
-            <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="14"/>
-            </Style>
-        </Button.Resources>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="14"/>
+                </Style>
+            </Button.Resources>
         </Button>
 
     </Grid>

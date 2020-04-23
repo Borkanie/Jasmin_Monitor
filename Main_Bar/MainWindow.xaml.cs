@@ -203,6 +203,14 @@ namespace Main_Bar
                         // hours += Math.Round(mnutes / 60);
                         mnutes = mnutes - Math.Round(mnutes / 60) * 60;
                     }
+                    ///GRESIT
+                    ///TREBE REPARAT
+                    ///schimbat calculu nush plm
+                    if (mnutes < 0)
+                        mnutes = -mnutes;
+                    if(mnutes<10)
+                        timp_pauza_old = hours.ToString() + ":0" + mnutes.ToString();
+                    else
                     timp_pauza_old = hours.ToString() + ":" + mnutes.ToString();
                 }
                 Dispatcher.Invoke(() => txt_pauza.Text =timp_pauza_old);

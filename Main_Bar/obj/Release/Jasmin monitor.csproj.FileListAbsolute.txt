@@ -1,0 +1,18 @@
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.exe.config
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.exe
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.pdb
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin monitor.csprojAssemblyReference.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\LoginWindow.baml
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\MainWindow.baml
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\LoginWindow.g.cs
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\MainWindow.g.cs
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\App.g.cs
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar_MarkupCompile.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar_MarkupCompile.lref
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.g.resources
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.Properties.Resources.resources
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin monitor.csproj.GenerateResource.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin monitor.csproj.CoreCompileInputs.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin monitor.csproj.CopyComplete
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.exe
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.pdb

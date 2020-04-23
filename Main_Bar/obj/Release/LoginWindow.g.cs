@@ -92,7 +92,7 @@ namespace Main_Bar {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Main_Bar;component/loginwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Jasmin Monitor;component/loginwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\LoginWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

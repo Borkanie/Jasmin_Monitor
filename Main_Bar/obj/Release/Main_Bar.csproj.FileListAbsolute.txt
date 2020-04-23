@@ -36,20 +36,21 @@ C:\Users\Projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.cs
 C:\Users\Projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.csproj.CopyComplete
 C:\Users\Projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.exe
 C:\Users\Projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.pdb
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.exe.config
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.exe
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Main_Bar.pdb
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\LoginWindow.g.cs
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\MainWindow.g.cs
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\App.g.cs
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar_MarkupCompile.cache
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar_MarkupCompile.lref
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\LoginWindow.baml
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\MainWindow.baml
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.g.resources
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.Properties.Resources.resources
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.csproj.GenerateResource.cache
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.csproj.CoreCompileInputs.cache
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.csproj.CopyComplete
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.exe
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.pdb
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Main_Bar.csprojAssemblyReference.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Jasmin Monitor.exe.config
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Jasmin Monitor.exe
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\bin\Release\Jasmin Monitor.pdb
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin Monitor_MarkupCompile.cache
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin Monitor_MarkupCompile.lref
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin Monitor.g.resources
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin Monitor.exe
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\Jasmin Monitor.pdb

@@ -1,20 +1,20 @@
-﻿Main_Bar
+﻿main_Bat
 
 
 winexe
 C#
 .cs
-D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Release\
+D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\obj\Debug\
 Main_Bar
 none
 false
-TRACE
+DEBUG;TRACE
 D:\munca\projects\jasmin-monitor\jasmin_monitor\Main_Bar\App.xaml
 22037783069
 
-8-653242355
-152108585061
+8-418022890
+151540434079
 LoginWindow.xaml;MainWindow.xaml;
 
-False
+True
 
